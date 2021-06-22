@@ -1,48 +1,75 @@
-# Getting Started with Create React App
+<p align="center">
+  <img alt="Logo DevRise Week" title="#douglasproglima-apps" src="https://rubyonrails.org/images/rails-logo.svg" width="250px" />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+🚀 Letmeask - Em Construção 🚀
+</h1>
 
-## Available Scripts
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Douglasproglima/letmeask-proglima">
 
-In the project directory, you can run:
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Douglasproglima/letmeask-proglima">
 
-### `yarn start`
+  <a href="https://github.com/Douglasproglima/letmeask-proglima/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Douglasproglima/letmeask-proglima">
+  </a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <a href="https://github.com/Douglasproglima/FindHouses/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/Douglasproglima/letmeask-proglima">
+  </a>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+</p>
 
-### `yarn test`
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-aprendizado">Aprendizado</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-comandos">Comandos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
+</p>
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 💻 Projeto
 
-### `yarn build`
+Esse projeto foi desenvolvido com o objetivo de atualizar me com reactjs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :rocket: Tecnologias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Reactjs](https://pt-br.reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [sass](https://sass-lang.com/)
+- [Firebase](https://firebase.google.com/)
 
-### `yarn eject`
+\* Para mais detalhes, veja o **[Package.json](./package.json)**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## :school_satchel: Aprendizados
+- Reactjs + Firebase
+- Typescript
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧪 Comandos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+$ git clone https://github.com/douglasproglima/letmeask-proglima.git
+$ cd letmeask-proglima
+$ yarn
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Rename the file .env_example for .env and inform your credentials firebase
 
-## Learn More
+$ yarn start
+# The app will be available for access on your browser at http://localhost:3000
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎨 Layout
+### Figma
+![Figma](https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# letmeask-proglima
-# letmeask-proglima
+### Web
+
+![Home](./src/assets/images/home.png)
+
+Feito com ❤️ por Douglas Lima <img src="https://raw.githubusercontent.com/Douglasproglima/douglasproglima/master/gifs/Hi.gif" width="30px"></h2> [Entre em contato!](https://www.linkedin.com/in/douglasproglima)
