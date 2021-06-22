@@ -1,9 +1,9 @@
-<p align="center">
+<p align="center" style="background: #fff">
   <img alt="Logo DevRise Week" title="#douglasproglima-apps" src="./src/assets/images/logo.svg" width="250px" />
 </p>
 
 <h1 align="center">
-🚀 Letmeask - Em Construção 🚀
+🚧 Letmeask - Em Construção 🚧
 </h1>
 
 <p align="center">
@@ -24,6 +24,7 @@
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#rocket-requisitos">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-aprendizado">Aprendizado</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-comandos">Comandos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -36,39 +37,43 @@
 
 Esse projeto foi desenvolvido com o objetivo de atualizar me com reactjs.
 
-## :rocket: Tecnologias
+## ❗ Requisitos
+
+- Você precisa instalar [Node.js](https://nodejs.org/en/download/) e [Yarn](https://yarnpkg.com/) para executar este projeto.
+## ✈️ Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Reactjs](https://pt-br.reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [sass](https://sass-lang.com/)
-- [Firebase](https://firebase.google.com/)
+- [Firebase Authentication](https://firebase.google.com/products/auth)
+- [Firebase Realtime Database](https://firebase.google.com/products/realtime-database)
 
 \* Para mais detalhes, veja o **[Package.json](./package.json)**
 
-## :school_satchel: Aprendizados
-- Reactjs + Firebase
+## 🎓 Aprendizados
+- Reactjs + Firebase Authentication and Realtime Database
+- React Hooks
 - Typescript
 
-## 🧪 Comandos
+## 📃 Comandos
 
 ```bash
-$ git clone https://github.com/douglasproglima/letmeask-proglima.git
-$ cd letmeask-proglima
+$ git clone https://github.com/douglasproglima/letmeask-proglima.git && cd letmeask-proglima
 $ yarn
 
 # Rename the file .env_example for .env and inform your credentials firebase
 
 $ yarn start
-# The app will be available for access on your browser at http://localhost:3000
 ```
+The app will be available for access on your browser at http://localhost:3000
 
 ## 🎨 Layout
 ### Figma
 - [Layout Web](https://www.figma.com/file/kQFDoPWWvyaDKyFFlUYMpe/Letmeask) 
 
-### Web
+### ⭕ Web
 
 ![Home](./src/assets/others/1_Home.png)
 
