@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Logo DevRise Week" title="#douglasproglima-apps" src="https://rubyonrails.org/images/rails-logo.svg" width="250px" />
+  <img alt="Logo DevRise Week" title="#douglasproglima-apps" src="./assets/images/logo.svg" width="250px" />
 </p>
 
 <h1 align="center">
@@ -66,10 +66,10 @@ $ yarn start
 
 ## 🎨 Layout
 ### Figma
-![Figma](https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/)
+- [Layout Web](https://www.figma.com/file/kQFDoPWWvyaDKyFFlUYMpe/Letmeask) 
 
 ### Web
 
-![Home](./src/assets/images/home.png)
+![Home](./src/assets/others/1_Home.png)
 
 Feito com ❤️ por Douglas Lima <img src="https://raw.githubusercontent.com/Douglasproglima/douglasproglima/master/gifs/Hi.gif" width="30px"></h2> [Entre em contato!](https://www.linkedin.com/in/douglasproglima)
