@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Logo DevRise Week" title="#douglasproglima-apps" src="./assets/images/logo.svg" width="250px" />
+  <img alt="Logo DevRise Week" title="#douglasproglima-apps" src="./src/assets/images/logo.svg" width="250px" />
 </p>
 
 <h1 align="center">
