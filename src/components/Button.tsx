@@ -1,19 +1,12 @@
-import { useState } from 'react';
-import { Input } from './Input';
+import { ButtonHTMLAttributes } from 'react';
+import '../styles/button.scss';
 
-type ButtonProps = {
-  text?: string;
-  textInput?: string;
-  children?: string;
-  visible?: boolean;
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button(props: ButtonProps) {
   return (
     <>
-      <Input placeHolder={props.textInput} visible={props.visible || false} />
-      <div/>
-      <button >{props.text || props.children}</button>
+      <button className="button" {...props} />
     </>
   );
 }
