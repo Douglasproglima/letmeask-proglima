@@ -1,18 +1,19 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { useAuth } from '../Hooks/useAuth';
-import { database } from '../services/firebase';
-import { Button } from '../components/Button';
-import { RoomCode } from '../components/RoomCode';
+import { useAuth } from '../../../Hooks/useAuth';
+import { database } from '../../../services/firebase';
+import { Button } from '../../../components/Button';
+import { RoomCode } from '../../../components/RoomCode';
 
-import logoImg from '../assets/images/logo.svg';
-import '../styles/room.scss';
+import logoImg from '../../../assets/images/logo.svg';
+import './styles.scss';
+//import '../styles/room.scss';
 
 //#region Types
 type RoomParams = {
   id: string
-}
+};
 
 type Question = {
   id: string,
@@ -20,24 +21,23 @@ type Question = {
     name: string,
     avatar: string
   },
-  content: string;
+  content: string,
   isAnswered: boolean,
   isHighlighted: boolean
-}
+};
 
 type FirebaseQuestions = Record<string, {
-  author: {
-    name: string,
-    avatar: string
-  },
-  content: string;
-  isAnswered: boolean,
-  isHighlighted: boolean
-}>
+    author: {
+      name: string,
+      avatar: string
+    },
+    content: string,
+    isAnswered: boolean,
+    isHighlighted: boolean
+  }>
 //#endregion
 
 export function Room() {
-  
   //#region States and Variables
   const params = useParams<RoomParams>();
   const roomId = params.id;
@@ -52,7 +52,15 @@ export function Room() {
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`);
 
-    roomRef.on('value', room => {
+    /* Observa o evento da lista
+    function onChildAdded() {}
+    function onChildChanged() {}
+
+    roomRef.on('child_added', onChildAdded);
+    roomRef.on('child_changed', onChildChanged);
+    */
+
+    roomRef.on('value', (room) => {
       const databaseRoom = room.val();
       const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
 
@@ -69,21 +77,21 @@ export function Room() {
       setTitle(databaseRoom.title);
       setQuestions(parsedQuestions);
     })
-  }, [roomId])
+  }, [roomId]);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
 
     if (newQuestion.trim() === '') return;
 
-    if(!user)
+    if (!user)
       throw new Error('You must be logged in');
 
     const question = {
       content: newQuestion,
       author: {
         name: user.name,
-        avatar: user.avatar
+        avatar: user.avatar,
       },
       isHighlighted: false,
       isAnswered: false
@@ -97,50 +105,53 @@ export function Room() {
 
   return (
     <>
-      <div id="page-room">
+      <div id='page-room'>
         <header>
-          <div className="content">
-            <img src={logoImg} alt="Letmeask" />
-            <RoomCode code={ roomId } />
+          <div className='content'>
+            <img src={logoImg} alt='Letmeask' />
+            <RoomCode code={roomId} />
           </div>
         </header>
 
-        <main className="content">
-          <div className="room-title">
+        <main className='content'>
+          <div className='room-title'>
             <h1>Sala {title}</h1>
-            { questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+            {questions.length > 0 && (
+              <span>{questions.length} pergunta(s)</span>
+            )}
           </div>
 
-          <form onSubmit={ handleSendQuestion }>
-            <textarea             
-              placeholder="O que você quer perguntas?" 
-              onChange={event => setNewQuestion(event.target.value)}
+          <form onSubmit={handleSendQuestion}>
+            <textarea
+              placeholder='O que você quer perguntas?'
+              onChange={(event) => setNewQuestion(event.target.value)}
               value={newQuestion}
             />
-            
-            <div className="form-footer">
-              {
-                user ? (
-                  <div className="user-info">
-                    <img src={user.avatar} alt={user.name} />
-                    <span>{user.name}</span>
-                  </div>
-                ) : (
-                  <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
-                )
-              }
 
-              <Button type="submit" disabled={!user}>Enviar Pergunta</Button>
+            <div className='form-footer'>
+              {user ? (
+                <div className='user-info'>
+                  <img src={user.avatar} alt={user.name} />
+                  <span>{user.name}</span>
+                </div>
+              ) : (
+                <span>
+                  Para enviar uma pergunta, <button>faça seu login</button>.
+                </span>
+              )}
+
+              <Button type='submit' disabled={!user}>
+                Enviar Pergunta
+              </Button>
             </div>
           </form>
-          
+
           {
-            //Recuperar valores da API do firebase
+            // Recuperar valores da API do firebase
             /* https://firebase.google.com/docs/database/admin/retrieve-data?hl=pt-br#section-event-types */
             JSON.stringify(questions)
           }
-      </main>
-
+        </main>
       </div>
     </>
   );
