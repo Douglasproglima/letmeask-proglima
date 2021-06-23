@@ -34,21 +34,21 @@ export function NewRoom() {
   return (
     <div id="page-auth">
       <aside>
-        <img src={illustrationImg} alt="Ilustração perguntas e respostas" />
+        <img src={ illustrationImg } alt="Ilustração perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao vivo</strong>
         <p>Tire as dúvidas da sua audiência em tempo-real</p>
       </aside>
 
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask-proglima" />
+          <img src={ logoImg } alt="Letmeask-proglima" />
           <h2>Criar uma nova sala</h2>
           <form onSubmit={handleCreateNewRoom}>
             <input
-              onChange={event => setNewRoom(event.target.value)}
+              onChange={ event => setNewRoom(event.target.value) }
+              value={ newRoom }
               type="text"
               placeholder="Nome da sala"
-              value={newRoom}
             />
             <Button type="submit">Criar Sala</Button>
           </form>
