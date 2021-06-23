@@ -133,7 +133,13 @@ export function Room() {
               <Button type="submit" disabled={!user}>Enviar Pergunta</Button>
             </div>
           </form>
-        </main>
+          
+          {
+            //Recuperar valores da API do firebase
+            /* https://firebase.google.com/docs/database/admin/retrieve-data?hl=pt-br#section-event-types */
+            JSON.stringify(questions)
+          }
+      </main>
 
       </div>
     </>
