@@ -2,12 +2,18 @@
   height: 40px;
   border-radius: 8px;
   overflow: hidden;
-  
+
   background: var(--white);
   border: 1px solid var(--background-button-dinamic);
   cursor: pointer;
-  
+
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  //margin-right: 10px;
+  //margin-left: 10px;
 
   div {
     background: var(--background-button-dinamic);
@@ -22,11 +28,11 @@
   span {
     width: 200px;
     padding: 0 16px 0 12px;
-    
+
     display: block;
     align-self: center;
     flex: 1;
-    
+
     font-size: 14px;
     font-weight: 500;
   }

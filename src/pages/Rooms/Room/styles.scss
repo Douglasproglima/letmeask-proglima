@@ -13,6 +13,18 @@
       > img {
         max-height: 45px;
       }
+
+      > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 16px; //Add um espaço quando houver dois elementos(2x btn)
+
+        > button {
+          height: 40px;
+        }
+      }
     }
   }
 
