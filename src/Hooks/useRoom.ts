@@ -1,30 +1,37 @@
 import { useEffect, useState } from "react";
 import { database } from "../services/firebase";
+import { useAuth } from "./useAuth";
 
 //#region Types
 type QuestionType = {
-  id: string,
+  id: string;
   author: {
-    name: string,
-    avatar: string
+    name: string;
+    avatar: string;
   },
-  content: string,
-  isAnswered: boolean,
-  isHighlighted: boolean
-};
+  content: string;
+  isAnswered: boolean;
+  isHighlighted: boolean;
+  likeCount: number;
+  hasLiked: boolean;
+}
 
 type FirebaseQuestions = Record<string, {
-    author: {
-      name: string,
-      avatar: string
-    },
-    content: string,
-    isAnswered: boolean,
-    isHighlighted: boolean
+  author: {
+    name: string;
+    avatar: string;
+  }
+  content: string;
+  isAnswered: boolean;
+  isHighlighted: boolean;
+  likes: Record<string, {
+    authorId: string;
   }>
+}>
 //#endregion
 
 export function useRoom(roomId: string) {
+  const { user } = useAuth();
   const [questions, setQuestions] = useState<QuestionType[]>([]);
   const [title, setTitle] = useState();
   
@@ -51,13 +58,22 @@ export function useRoom(roomId: string) {
           author: value.author,
           isHighlighted: value.isHighlighted,
           isAnswered: value.isAnswered,
+          likeCount: Object.values(value.likes ?? {}).length,
+          /* Some => Percorre o array até encontrar uma condição que satifaz (true, false) */
+          hasLiked: Object.values(value.likes ?? {}).some(like => like.authorId === user?.id)
         }
       })
 
       setTitle(databaseRoom.title);
       setQuestions(parsedQuestions);
     })
-  }, [roomId]);
+
+    /* Remover todos os eventListerners para a referencia de sala do roomRef.on('value', ...*/
+    return () => {
+      roomRef.off('value');
+    }
+
+  }, [roomId, user?.id]);
   //#endregion
 
   return { questions, title }

@@ -1,4 +1,3 @@
-import * as dotenv from "dotenv";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';

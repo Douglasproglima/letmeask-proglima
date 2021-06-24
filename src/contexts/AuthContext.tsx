@@ -63,11 +63,13 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     }
   }
 
+  /*
   async function signOut() {
     await auth.signOut();
     setUser(undefined);
     // push('/');
   }
+  */
 
   return (
     <AuthContext.Provider value={{ user, signInWithGoogle }}>
