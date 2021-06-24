@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { AuthContextProvider } from './Contexts/AuthContext';
 import { Home } from './pages/Home';
 import { NewRoom } from './pages/Rooms/NewRoom';
