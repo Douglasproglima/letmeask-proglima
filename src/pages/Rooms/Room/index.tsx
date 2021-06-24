@@ -52,9 +52,10 @@ export function Room() {
     setNewQuestion('');
   }
 
-  async function handleLikeQuestion(questionId: string, hasLiked: boolean) {
-    if (hasLiked) {
+  async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
+    if (likeId) {
       //Remove o like
+      await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove()
     } else {
       //Add o like
       await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
@@ -120,8 +121,8 @@ export function Room() {
                     content={question.content} 
                   >
                     <button
-                      onClick={() => handleLikeQuestion(question.id, question.hasLiked)}
-                      className={`like-button ${question.hasLiked ? 'liked' : ''}`}
+                      onClick={() => handleLikeQuestion(question.id, question.likeId)}
+                      className={`like-button ${question.likeId ? 'liked' : ''}`}
                       type="button"
                       aria-label="Marcar como gostei"
                     >
