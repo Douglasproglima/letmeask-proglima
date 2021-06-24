@@ -1,0 +1,40 @@
+.question {
+  background: var(--white-obs);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+
+  //Quando se  usa o & dentro do sass ele referencia ao próprio elemento no caso o .question
+  //Com isso a cada nova question lançada, irá ter um margin-top 8 referente a anterior.
+  & + .question {
+    margin-top: 8px;
+  }
+
+  p {
+    color: var(--black-light);
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      span {
+        margin-left: 8px;
+        color: var(--grey-light2);
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,25 +1,26 @@
 html {
-  --black: #0D114F;
+  --black: #0d114f;
   --black-light: #29292e;
-  --white: #FFFFFF;
-  --white-light: #F8F8F8;
-  --white-grey: #FAFAFA;
-  --white-obs: #dadada52;
-  --red: #E83F5B;
-  --red-google: #E34133;
-  --light-blue: #E0ECFF;
-  --blue: #3485FF;
-  --background: #FBFCFF;
+  --white: #ffffff;
+  --white-light: #f8f8f8;
+  --white-grey: #fafafa;
+  --white-obs: #fefefe;
+  --red: #e83f5b;
+  --red-google: #e34133;
+  --light-blue: #e0ecff;
+  --blue: #3485ff;
+  --background: #f7f7f7;
   --overlay: #040911;
-  --icons-details: #A580C1;
-  --grey-dark: #4D5E77;
-  --grey-blue: #A1B2CD;
+  --icons-details: #a580c1;
+  --grey-dark: #4d5e77;
+  --white-litle-dark: #dadada52;
+  --grey-blue: #a1b2cd;
   --grey-light: #a8a8b3;
   --grey-light2: #737380;
   --grey-line: #e2e2e2;
   --pink: #ce41e0b6;
-  --background-button-dinamic: #835AFD;
-  
+  --background-button-dinamic: #835afd;
+
   font-size: 62.5%;
 }
 
@@ -34,7 +35,10 @@ body {
   color: var(--black-light);
 }
 
-body, input, button, textarea {
+body,
+input,
+button,
+textarea {
   font-size: clamp(14px, 1.6rem, 2vw);
-  font: 'Roboto', sans-serif;
+  font: "Roboto", sans-serif;
 }

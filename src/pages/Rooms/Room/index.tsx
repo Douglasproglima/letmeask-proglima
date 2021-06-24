@@ -5,6 +5,7 @@ import { useAuth } from '../../../Hooks/useAuth';
 import { database } from '../../../services/firebase';
 import { Button } from '../../../components/Button';
 import { RoomCode } from '../../../components/RoomCode';
+import { Question } from '../../../components/Question';
 
 import logoImg from '../../../assets/images/logo.svg';
 import './styles.scss';
@@ -15,7 +16,7 @@ type RoomParams = {
   id: string
 };
 
-type Question = {
+type QuestionType = {
   id: string,
   author: {
     name: string,
@@ -44,7 +45,7 @@ export function Room() {
 
   const { user } = useAuth();
   const [newQuestion, setNewQuestion] = useState('');
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<QuestionType[]>([]);
   const [title, setTitle] = useState();
   //#endregion
 
@@ -146,11 +147,22 @@ export function Room() {
             </div>
           </form>
 
-          {
-            // Recuperar valores da API do firebase
-            /* https://firebase.google.com/docs/database/admin/retrieve-data?hl=pt-br#section-event-types */
-            JSON.stringify(questions)
-          }
+          <div className="question-list">
+            {
+              /*Recuperar valores da API do firebase*/
+              /* https://firebase.google.com/docs/database/admin/retrieve-data?hl=pt-br#section-event-types */
+              /* Map -> Similar ao foreache porém retorna um elemento percorrido */
+              questions.map(question => {
+                return (
+                  <Question
+                    key={question.id}
+                    author={question.author} 
+                    content={question.content} 
+                  />
+                );
+              })
+            }
+          </div>
         </main>
       </div>
     </>
