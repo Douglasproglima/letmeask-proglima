@@ -41,33 +41,35 @@ export function Home() {
   }
 
   return (
-    <div id="page-auth">
-      <aside>
-        <img src={illustrationImg} alt="Ilustração perguntas e respostas" />
-        <strong>Crie salas de Q&amp;A ao vivo</strong>
-        <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
-      </aside>
+    <>
+      <div id="page-auth">
+        <aside>
+          <img src={illustrationImg} alt="Ilustração perguntas e respostas" />
+          <strong>Crie salas de Q&amp;A ao vivo</strong>
+          <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
+        </aside>
 
-      <main>
-        <div className="main-content">
-          <img src={logoImg} alt="Letmeask-proglima" />
-          <button onClick={handleCreateRoom} className="create-room" >
-            <img src={googleIconImg} alt="Logo do Google" />
-            Crie sua sala com o Google
-          </button>
-          <div className="separator">Ou entre em uma sala</div>
-          <form onSubmit={ handleJoinRoom }>
-            <input
-              onChange={ event => setRoomCode(event.target.value) }
-              value={ roomCode }
-              type="text"
-              placeholder="Digite o código da sala"
-            />
-            <Button type="submit">Entrar na Sala</Button>
-          </form>
-        </div>
-      </main>
+        <main>
+          <div className="main-content">
+            <img src={logoImg} alt="Letmeask-proglima" />
+            <button onClick={handleCreateRoom} className="create-room" >
+              <img src={googleIconImg} alt="Logo do Google" />
+              Crie sua sala com o Google
+            </button>
+            <div className="separator">Ou entre em uma sala</div>
+            <form onSubmit={ handleJoinRoom }>
+              <input
+                onChange={ event => setRoomCode(event.target.value) }
+                value={ roomCode }
+                type="text"
+                placeholder="Digite o código da sala"
+              />
+              <Button type="submit">Entrar na Sala</Button>
+            </form>
+          </div>
+        </main>
 
-    </div>
+      </div>
+    </>
   );
 }

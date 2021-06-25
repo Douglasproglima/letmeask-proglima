@@ -3,6 +3,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 24px;
+  margin-top: 8px;
 
   //Quando se  usa o & dentro do sass ele referencia ao próprio elemento no caso o .question
   //Com isso a cada nova question lançada, irá ter um margin-top 8 referente a anterior.

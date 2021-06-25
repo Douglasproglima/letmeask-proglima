@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { useAuth } from '../../../Hooks/useAuth';
 import { useRoom } from '../../../Hooks/useRoom';
@@ -70,7 +70,9 @@ export function Room() {
       <div id='page-room'>
         <header>
           <div className='content'>
-            <img src={logoImg} alt='Letmeask' />
+            <Link to="/">
+              <img src={logoImg} alt='Letmeask-proglima' />
+            </Link>
             <RoomCode code={roomId} />
           </div>
         </header>
