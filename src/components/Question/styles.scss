@@ -10,6 +10,21 @@
     margin-top: 8px;
   }
 
+  &.highlighted {
+    background: var(--background-highlighted);
+    border: 0.2px solid var(--background-button-dinamic);
+
+    footer .user-info span {
+      color: var(--black);
+      font-weight: lighter;
+    }
+  }
+
+  &.answered {
+    background: var(--background-answered);
+    border: 0.1px solid var(--background-button-dinamic);
+  }
+
   p {
     color: var(--black-light);
   }
@@ -35,6 +50,11 @@
         color: var(--grey-light2);
         font-size: 14px;
       }
+    }
+
+    > div {
+      display: flex;
+      gap: 16px;
     }
 
     button {

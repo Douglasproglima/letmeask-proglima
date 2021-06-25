@@ -20,6 +20,8 @@ html {
   --grey-line: #e2e2e2;
   --pink: #ce41e0b6;
   --background-button-dinamic: #835afd;
+  --background-highlighted: #f4f0ff;
+  --background-answered: #dbdcdd;
 
   font-size: 62.5%;
 }
@@ -40,5 +42,5 @@ input,
 button,
 textarea {
   font-size: clamp(14px, 1.6rem, 2vw);
-  font: "Roboto", sans-serif;
+  font: 'Roboto', sans-serif;
 }
