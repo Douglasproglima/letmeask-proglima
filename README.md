@@ -37,6 +37,25 @@
 ---
 Esse projeto foi desenvolvido com o objetivo de atualizar me com reactjs.
 
+### Login com a conta do Google
+---
+![Login](./images/00.png)
+
+### Home
+---
+![Home](./images/01.png)
+
+### Nova Sala
+---
+![Nova Sala](./images/02.png)
+### Página de Perguntas/Respostas Q&A
+---
+![Página de Perguntas/Respostas](./images/03.png)
+
+### Página do ADMIN | Q&A
+---
+![Página de Perguntas/Respostas](./images/04.png)
+
 ## ❗ Requisitos
 ---
 - Você precisa instalar [Node.js](https://nodejs.org/en/download/) e [Yarn](https://yarnpkg.com/) para executar este projeto.
