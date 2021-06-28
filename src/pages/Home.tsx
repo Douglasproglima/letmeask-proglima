@@ -41,7 +41,7 @@ export function Home() {
   }
 
   return (
-    <>
+    <div className="container">
       <div id="page-auth">
         <aside>
           <img src={illustrationImg} alt="Ilustração perguntas e respostas" />
@@ -70,6 +70,6 @@ export function Home() {
         </main>
 
       </div>
-    </>
+    </div>
   );
 }

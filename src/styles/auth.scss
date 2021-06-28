@@ -1,7 +1,11 @@
+
 #page-auth {
   display: flex;
-  align-items: stretch;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  //height: 75vh;
 
   aside {
     background: #835afd;
@@ -12,22 +16,24 @@
     flex-direction: column;
     justify-content: center;
 
-    padding: 120px 80px;
+    //padding: 8rem 8rem;
+    padding: 2rem 2rem 4rem;
+    //padding: 120px 80px;
 
     img {
-      max-width: 320px;
+      max-width: 20rem;
     }
 
     strong {
-      font: 700 36px 'Pappins', sans-serif;
-      line-height: 42px;
-      margin-top: 16px;
+      font: 700 3rem 'Pappins', sans-serif;
+      line-height: 4rem;
+      margin-top: 1rem;
     }
 
     p {
-      font-size: 24px;
-      line-height: 32px;
-      margin-top: 16px;
+      font-size: 1.8rem;
+      line-height: 2rem;
+      margin-top: 2rem;
       color: var(--white-light);
     }
   }
@@ -37,39 +43,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 
-    padding: 0 32px;
+    padding: 3rem 2rem 4rem;
   }
 
   .main-content {
+    
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
-    max-width: 320px;
+    max-width: 22rem;
     align-items: stretch;
     text-align: center;
 
-    > img {
-      align-self: center;
+    > img { 
+      align-self: center; 
     }
 
     h2 {
-      font-size: 24px;
-      margin-top: 64px 0 24px;
+      font-size: 2rem;
+      margin-top: 4rem 0 2rem;
       font-family: 'Popins', sans-serif;
     }
 
     form {
+      display: flex;
+      flex-direction: column;
+
       input {
-        height: 50px;
-        border-radius: 8px;
-        padding: 0 16px;
-        background: var(--white-grey);
+        //height: 4rem;
+        height: 3.5rem;
+        border-radius: 0.5rem;
+        padding: 0 1rem;
+        background: var(--background-input-room);
         border: 1px solid var(--grey-light);
+        
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+
+        ::-webkit-input-placeholder { color: var(--placeholder); }
+        :-moz-placeholder { color: var(--placeholder); }
+        ::-moz-placeholder { color: var(--placeholder); }
+        :-ms-input-placeholder { color: var(--placeholder); }
       }
 
       button {
-        margin-top: 16px;
+        margin-top: 1rem;
       }
 
       button, input {
@@ -78,9 +101,9 @@
     }
 
     p {
-      font-size: 14px;
+      font-size: 1.1rem;
       color: var(--grey-light2);
-      margin-top: 16px;
+      margin-top: 1rem;
 
       a {
         padding-left: 5px;
@@ -89,13 +112,18 @@
     }
 
     .create-room {
+      height: 5rem;
+      max-width: 100%;
+      //width: 20rem;
+      box-sizing: border-box;
+
       background: var(--red-google);
       color: var(--white);
 
       font-weight: 500;
-      margin-top: 64px;
-      height: 50px;
-      border-radius: 8px;
+      margin-top: 3rem;
+      padding: 0 1rem;
+      border-radius: 0.5rem;
 
       display: flex;
       justify-content: center;
@@ -106,29 +134,31 @@
 
       transition: filter 0.3s;
 
-      img {
-        margin-right: 8px;
-      }
-
       &:hover {
         filter: brightness(0.8);
+        background-color: var(--red-google-secundary);
+      }
+
+      > img {
+        margin-right: 0.5rem !important;
       }
     }
 
     .separator {
-      font-size: 14px;
       color: var(--grey-light);
+      font-size: 0.8rem;
 
-      margin: 32px 0;
+      margin: 2rem 0;
       display: flex;
       align-items: center;
+      text-align: center;
 
       &::before {
         content: '';
         flex: 1;
         height: 1px;
         background: var(--grey-light);
-        margin-right: 16px;
+        margin-right: 1rem;
       }
 
       &::after {
@@ -136,7 +166,77 @@
         flex: 1;
         height: 1px;
         background: var(--grey-light);
-        margin-left: 16px;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+/* ------- Descktop ------- */
+@media (min-width: 720px) {
+  #page-auth {
+    height: 100vh;
+    min-height: 100vh;
+
+    flex-direction: row;
+    align-items: stretch;
+
+    main {
+      padding: 2rem 2rem;
+      flex: 8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .main-content {
+        .separator {
+          font-size: 1.1rem;
+        }
+
+        form {
+          input {
+            height: 5rem;
+          }
+        }
+
+        .create-room {
+          font-size: 1.2rem;
+          margin-top: 4rem;
+          height: 5rem;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+/* ------- Mobile ------- */
+@media (min-width: 360px) {
+  #page-auth {
+
+    aside {
+      padding: 2.8rem 2rem 6rem;
+      
+      img {
+        max-width: 16rem;
+      }
+    }
+
+    main { 
+      padding: 5rem 2rem 9rem;
+
+      .main-content {
+        form {
+          input {
+            height: 3.5rem;
+          }
+        }
+
+        .create-room {
+          height: 4rem;
+          margin-top: 9rem;
+        }
       }
     }
   }
